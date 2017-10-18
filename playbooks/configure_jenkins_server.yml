@@ -1,0 +1,6 @@
+---
+- name Configure server
+  hosts: jenkins
+  roles:
+    - git
+    
