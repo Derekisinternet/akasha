@@ -1,5 +1,5 @@
 ---
-  - name: install git
-    apt:
-      name=git
+- name: install git
+  apt:
+    name=git
       
