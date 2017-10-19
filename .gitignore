@@ -1,2 +1,5 @@
 # keep host information out of public repo
 hosts/
+
+# general annoyance
+**.swp
