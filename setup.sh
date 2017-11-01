@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pip install ansible
+pip install 'docker-py>=1.7.0'
 
 #now that ansible is installed:
 ansible-galaxy install geerlingguy.jenkins -p ./roles/
