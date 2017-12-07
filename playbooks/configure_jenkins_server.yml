@@ -4,4 +4,14 @@
   roles:
     - git
     - mongrelion.docker
-     
+
+- name: download and run docker container
+  hosts: jenkins
+  docker_container:
+    name: jenkins
+    image: jenkins/jenkins:lts
+    exposed_ports:
+      - 8080
+      - 50000
+
+
