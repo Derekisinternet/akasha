@@ -8,4 +8,4 @@ ansible-galaxy install geerlingguy.jenkins -p ./roles/
 
 # create inventory file:
 mkdir inventory
-touch inventory/main.yml
+touch inventory/hosts.yml
