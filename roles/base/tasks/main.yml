@@ -1,0 +1,8 @@
+---
+- name: install git
+  apt:
+    name=git
+- name: install docker
+  apt:
+    name=docker
+
