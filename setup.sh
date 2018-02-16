@@ -1,11 +1,10 @@
 #!/bin/bash
 
+# set up virtual env:
+sudo pip install pipenv
+pipenv --python 2.7
+pipenv install
+
 pip install ansible
-pip install 'docker-py>=1.7.0'
+ansible-galaxy install geerlingguy.java -p ./roles/
 
-# now that ansible is installed:
-ansible-galaxy install geerlingguy.jenkins -p ./roles/
-
-# create inventory file:
-mkdir inventory
-touch inventory/hosts.yml
