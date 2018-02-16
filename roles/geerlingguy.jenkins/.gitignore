@@ -1,2 +1,4 @@
+# Ansible stuff:
 *.retry
+**.galaxy_install_info
 tests/test.sh
