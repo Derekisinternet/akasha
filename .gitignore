@@ -4,3 +4,6 @@ inventory/
 # general annoyance
 **.swp
 **.DS_Store
+
+# Ansible stuff
+**.retry

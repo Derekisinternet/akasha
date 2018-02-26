@@ -6,7 +6,7 @@
     - mongrelion.docker
 
 - name: download and run docker container
-  hosts: jenkins
+  hosts: jenkins_master
   docker_container:
     name: jenkins
     image: jenkins/jenkins:lts
