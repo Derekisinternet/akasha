@@ -1,5 +1,5 @@
 ---
-- hosts: jenkins
+- hosts: jenkins_master
   roles:
     - git
     - mongrelion.docker
