@@ -1,17 +1,16 @@
 ---
-- name: Configure server
-  hosts: jenkins
+- hosts: jenkins
   roles:
     - git
     - mongrelion.docker
-
-- name: download and run docker container
-  hosts: jenkins_master
-  docker_container:
-    name: jenkins
-    image: jenkins/jenkins:lts
-    exposed_ports:
-      - 8080
-      - 50000
+  tasks:
+    - name: download and run docker container
+      docker_container:
+        name: jenkins
+        image: jenkins/jenkins:lts
+        state: present
+        exposed_ports:
+          - 8080
+          - 50000
 
 
