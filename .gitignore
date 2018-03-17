@@ -7,3 +7,4 @@ inventory/
 
 # Ansible stuff
 **.retry
+roles/
