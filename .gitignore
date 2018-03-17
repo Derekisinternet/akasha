@@ -8,3 +8,8 @@ inventory/
 # Ansible stuff
 **.retry
 roles/
+.idea
+
+#virtualenv
+venv/
+ENV/
