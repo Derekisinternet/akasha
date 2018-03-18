@@ -1,8 +1,10 @@
 ---
 - hosts: jenkins_master
+  become: true
   roles:
+    - base
     - git
-    - mongrelion.docker
+    - geerlingguy.docker
   tasks:
     - name: download and run docker container
       docker_container:
