@@ -4,7 +4,7 @@
   roles:
     - base
     - git
-    - geerlingguy.docker
+    - docker
   tasks:
     - name: download and run docker container
       docker_container:
