@@ -15,7 +15,7 @@
           - 8080
           - 50000
     - name: start Jenkins container
-      docker_contianer: 
+      docker_container: 
         name: jenkins
         state: started
 
