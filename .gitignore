@@ -6,7 +6,6 @@ inventory/
 **.DS_Store
 
 # Ansible stuff
-**.retry
 # roles/
 .idea
 
