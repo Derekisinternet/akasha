@@ -1,0 +1,9 @@
+---
+
+- name: install base packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    force: yes
+  with_list: "{{ base_package_list }}"
+  become: true
