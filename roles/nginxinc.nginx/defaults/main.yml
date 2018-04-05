@@ -58,3 +58,11 @@ configuration_templates:
     keepalive_timeout: 65
     listen: 80
     server_name: localhost
+
+vhost:
+  listen: "80"
+  server_name: "derekisinternet.com www.derekisinternet.com"
+  root: "var/www/derekisinternet.com"
+  index: "index.html"
+  error_page: ""
+  access_log: "logs/derekisinternet.access.log"

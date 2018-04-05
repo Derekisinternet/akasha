@@ -28,4 +28,17 @@ http {
     #gzip  on;
 
     include /etc/nginx/conf.d/*.conf;
-}
+
+    server {
+        listen      {{ vhost.listen }};
+        server_name {{ vhost.server_name }};
+        root:       {{ vhost.root }};
+        access_log: {{ vhost.access_log }};
+
+        location - ^/(derek))/ {
+            root    {{ webhost.root }}
+            expires 30d;
+        }
+    }
+}   
+

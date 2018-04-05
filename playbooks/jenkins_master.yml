@@ -6,6 +6,7 @@
     - git
     - docker
     - jenkins
+    - nginxinc.nginx
   # tasks:
   #   - name: download Jenkins container
   #     docker_container:
