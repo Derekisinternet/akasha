@@ -41,7 +41,7 @@ configuration_files:
 # Configuration variables to create a templated NGINX configuration.
 # Defaults are the values found in a fresh NGINX installation.
 configuration_templates:
-  enable: false
+  enable: true
   opensource:
     user: nginx
     worker_processes: 1
