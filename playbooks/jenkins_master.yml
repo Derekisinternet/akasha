@@ -7,17 +7,5 @@
     - docker
     - jenkins
     - nginxinc.nginx
-  # tasks:
-  #   - name: download Jenkins container
-  #     docker_container:
-  #       name: jenkins
-  #       image: jenkins/jenkins:lts
-  #       state: present
-  #       exposed_ports:
-  #         - 8080
-  #         - 50000
-  #   - name: start Jenkins container
-  #     docker_container: 
-  #       name: jenkins
-  #       state: started
+
 
