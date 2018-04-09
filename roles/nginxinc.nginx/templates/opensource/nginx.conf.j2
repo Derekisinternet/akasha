@@ -35,8 +35,8 @@ http {
         root:       {{ vhost.root }};
         access_log: {{ vhost.access_log }};
 
-        location - ^/(derek))/ {
-            root    {{ webhost.root }}
+        location - / {
+            root    {{ vhost.root }}
             expires 30d;
         }
     }
