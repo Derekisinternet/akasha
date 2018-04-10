@@ -29,15 +29,5 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 
-    server {
-        server_name {{ vhost.server_name }};
-        root        {{ vhost.root }};
-        access_log  {{ vhost.access_log }};
-
-        location / {
-            root    {{ vhost.root }};
-            expires 30d;
-        }
-    }
 }   
 
