@@ -30,13 +30,12 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
     server {
-        listen      {{ vhost.listen }};
         server_name {{ vhost.server_name }};
-        root:       {{ vhost.root }};
-        access_log: {{ vhost.access_log }};
+        root        {{ vhost.root }};
+        access_log  {{ vhost.access_log }};
 
-        location - / {
-            root    {{ vhost.root }}
+        location / {
+            root    {{ vhost.root }};
             expires 30d;
         }
     }

@@ -23,6 +23,12 @@
 - import_tasks: conf/upload-files.yml
   when: configuration_files.enable
 
+- name: "Upload mime.types"
+  copy:
+    src: conf/mime.types
+    dest: /etc/nginx/mime.types
+  notify: "(Handler: All OSs) Reload NGINX"
+
 - import_tasks: conf/upload-templates.yml
   when: configuration_templates.enable
 
