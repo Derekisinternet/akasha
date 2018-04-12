@@ -2,4 +2,4 @@
 - hosts: nginx
 
   roles:
-    - nginxinc.nginx
+    - { role: nginxinc.nginx, become: yes}

@@ -1,0 +1,8 @@
+server {
+  listen        {{ vhost.port }} default_server;
+  listen        [::]:{{ vhost.port }} default_server;
+  server_name   {{ vhost.server_name }};
+  root          {{ vhost.root}};
+  index         {{ vhost.index }};
+  try_files $uri   /{{ vhost.index }};
+}
