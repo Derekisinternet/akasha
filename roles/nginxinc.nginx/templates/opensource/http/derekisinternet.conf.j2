@@ -1,10 +1,13 @@
 server {
   listen        {{ vhost.port }} default_server;
   listen        [::]:{{ vhost.port }} default_server;
-  server_name   {{ vhost.server_name }};
   root          {{ vhost.root}};
   index         {{ vhost.index }};
-  try_files $uri   /{{ vhost.index }};
+  server_name   {{ vhost.server_name }};
+  
+  location / {
+    try_files  $uri $uri/ =404;
+  }
 
-  error_page 404    /404.html;
+  error_page 404 /http/404.html;
 }
