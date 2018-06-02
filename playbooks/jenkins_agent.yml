@@ -1,0 +1,7 @@
+---
+- hosts: jenkins_agents
+  roles:
+    - base
+    - geerlingguy.java
+    - docker
+    - jenkins_agent
