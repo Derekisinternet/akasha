@@ -1,10 +1,18 @@
 server {
   listen        {{ vhost.port }} default_server;
   listen        [::]:{{ vhost.port }} default_server;
+
+  listen 443 ssl;
+
   root          {{ vhost.root}};
   index         {{ vhost.index }};
   server_name   {{ vhost.server_name }};
   
+  # Redirect non-https traffic to https
+  if ($scheme != "https") {
+    return 301 https://$host$request_uri;
+  } # managed by Certbot
+
   location / {
     try_files  $uri $uri/ =404;
   }
