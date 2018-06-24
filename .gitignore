@@ -1,5 +1,6 @@
 # keep host information out of public repo
 inventory/
+credentials/
 
 # general annoyance
 **.swp

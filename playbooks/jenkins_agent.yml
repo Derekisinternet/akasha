@@ -1,7 +1,20 @@
 ---
 - hosts: jenkins_agents
+  become: true
+  vars_files:
+    - ../inventory/host_vars/jenkins_agent.yml
+  vars:
+    jenkins_master_host: " {{ hostvars[jenkins_agent_master]['ansible_host'] }}"
   roles:
-    - base
-    - geerlingguy.java
-    - docker
-    - jenkins_agent
+    - role: base
+      tags: 
+        - dependencies
+    - role: geerlingguy.java
+      tags:
+        - dependencies
+    - role: docker
+      tags:
+        - dependencies
+    - role: reynn.jenkins-swarm
+      tags:
+        - swarm
