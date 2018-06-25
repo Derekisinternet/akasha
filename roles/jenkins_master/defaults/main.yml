@@ -1,5 +1,5 @@
 ---
 
 jenkins_docker_image: "jenkins/jenkins:lts"
-jenkins_docker_tag: "2.89.1-alpine"
+jenkins_docker_tag: "2.121.1-alpine"
 jenkins_restart_container: true
