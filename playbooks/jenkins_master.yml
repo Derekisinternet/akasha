@@ -2,10 +2,17 @@
 - hosts: jenkins_masters
   become: true
   roles:
-    - base
-    - git
-    - docker
-    - jenkins_master
-    - nginxinc.nginx
+    - role: base
+      tags:
+        - dependencies
+    - role: docker
+      tags:
+        - dependencies
+    - role: jenkins_master
+      tags:
+        - container
+    - role: nginxinc.nginx
+      tags:
+        - nginx
 
 

@@ -4,13 +4,10 @@
   vars_files:
     - ../inventory/host_vars/jenkins_agent.yml
   vars:
-    jenkins_master_host: " {{ hostvars[jenkins_agent_master]['ansible_host'] }}"
+    jenkins_agent_master: " {{ hostvars[jenkins_master]['ansible_host'] }}"
   roles:
     - role: base
       tags: 
-        - dependencies
-    - role: geerlingguy.java
-      tags:
         - dependencies
     - role: docker
       tags:
