@@ -3,7 +3,7 @@
 - name: Start jenkins container
   docker_container:
     name: jenkins
-    image: "{{ jenkins_docker_image }}"
+    image: "{{ jenkins_docker_image }}:{{ jenkins_docker_image_tag }}"
     state: started
     exposed_ports:
       - 8080

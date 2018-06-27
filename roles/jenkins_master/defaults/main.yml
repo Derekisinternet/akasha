@@ -1,5 +1,193 @@
 ---
 
-jenkins_docker_image: "jenkins/jenkins:lts"
-jenkins_docker_tag: "2.121.1-alpine"
+jenkins_docker_image: "jenkins/jenkins"
+jenkins_docker_image_tag: "lts-alpine"
 jenkins_restart_container: true
+
+jenkins_user: jenkins
+jenkins_group: jenkins
+
+# plugins format should look like this:
+# jenkins_plugins:
+#   - name: "jacoco"
+#     version: "2.1"
+#
+# Jenkins Script:
+# ###########################################################
+# @Grab(group='org.yaml', module='snakeyaml', version='1.18')
+# def plugins = ['jenkins_plugins':[]]
+#
+# Jenkins.instance.pluginManager.plugins.each {
+#   plugins.jenkins_plugins.add(['name':it.shortName, 'version': it.version])
+# }
+#
+# def options = new org.yaml.snakeyaml.DumperOptions()
+# options.setPrettyFlow(true)
+# options.setIndent(4)
+# options.setIndicatorIndent(2)
+# options.setDefaultFlowStyle(org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK)
+# def yaml = new org.yaml.snakeyaml.Yaml(options).dump(plugins)
+# println yaml
+jenkins_plugins:
+  - name: ace-editor
+    version: '1.1'
+  - name: pipeline-graph-analysis
+    version: '1.7'
+  - name: build-timeout
+    version: '1.19'
+  - name: timestamper
+    version: 1.8.10
+  - name: ssh-credentials
+    version: '1.14'
+  - name: workflow-basic-steps
+    version: '2.9'
+  - name: command-launcher
+    version: '1.2'
+  - name: parameterized-trigger
+    version: 2.35.2
+  - name: ldap
+    version: '1.20'
+  - name: bouncycastle-api
+    version: 2.16.3
+  - name: maven-plugin
+    version: 3.1.2
+  - name: antisamy-markup-formatter
+    version: '1.5'
+  - name: workflow-cps-global-lib
+    version: '2.9'
+  - name: swarm
+    version: '3.13'
+  - name: resource-disposer
+    version: '0.10'
+  - name: momentjs
+    version: 1.1.1
+  - name: workflow-support
+    version: '2.19'
+  - name: git-server
+    version: '1.7'
+  - name: pipeline-stage-tags-metadata
+    version: '1.3'
+  - name: structs
+    version: '1.14'
+  - name: credentials-binding
+    version: '1.16'
+  - name: pipeline-github-lib
+    version: '1.0'
+  - name: run-condition
+    version: '1.0'
+  - name: pipeline-stage-view
+    version: '2.10'
+  - name: javadoc
+    version: '1.4'
+  - name: pipeline-input-step
+    version: '2.8'
+  - name: authentication-tokens
+    version: '1.3'
+  - name: handlebars
+    version: 1.1.1
+  - name: workflow-api
+    version: '2.28'
+  - name: durable-task
+    version: '1.22'
+  - name: pipeline-build-step
+    version: '2.7'
+  - name: github-branch-source
+    version: 2.3.6
+  - name: pipeline-model-declarative-agent
+    version: 1.1.1
+  - name: pipeline-stage-step
+    version: '2.3'
+  - name: github-api
+    version: '1.92'
+  - name: github
+    version: 1.29.2
+  - name: ssh-slaves
+    version: '1.26'
+  - name: jsch
+    version: 0.1.54.2
+  - name: workflow-aggregator
+    version: '2.5'
+  - name: pipeline-model-api
+    version: '1.3'
+  - name: external-monitor-job
+    version: '1.7'
+  - name: token-macro
+    version: '2.5'
+  - name: script-security
+    version: '1.44'
+  - name: scm-api
+    version: 2.2.7
+  - name: jquery
+    version: 1.12.4-0
+  - name: apache-httpcomponents-client-4-api
+    version: 4.5.5-3.0
+  - name: display-url-api
+    version: 2.2.0
+  - name: pipeline-model-extensions
+    version: '1.3'
+  - name: workflow-multibranch
+    version: '2.19'
+  - name: email-ext
+    version: '2.62'
+  - name: workflow-scm-step
+    version: '2.6'
+  - name: matrix-auth
+    version: '2.2'
+  - name: jquery-detached
+    version: 1.2.1
+  - name: jackson2-api
+    version: 2.8.11.3
+  - name: jdk-tool
+    version: '1.1'
+  - name: branch-api
+    version: 2.0.20
+  - name: workflow-job
+    version: '2.21'
+  - name: build-pipeline-plugin
+    version: 1.5.8
+  - name: workflow-durable-task-step
+    version: '2.19'
+  - name: pipeline-milestone-step
+    version: 1.3.1
+  - name: plain-credentials
+    version: '1.4'
+  - name: workflow-cps
+    version: '2.54'
+  - name: credentials
+    version: 2.1.17
+  - name: mailer
+    version: '1.21'
+  - name: gradle
+    version: '1.28'
+  - name: conditional-buildstep
+    version: 1.3.6
+  - name: pipeline-rest-api
+    version: '2.10'
+  - name: windows-slaves
+    version: 1.3.1
+  - name: role-strategy
+    version: 2.8.1
+  - name: git
+    version: 3.9.1
+  - name: pipeline-model-definition
+    version: '1.3'
+  - name: cloudbees-folder
+    version: 6.5.1
+  - name: docker-commons
+    version: '1.13'
+  - name: ws-cleanup
+    version: '0.34'
+  - name: ant
+    version: '1.8'
+  - name: junit
+    version: '1.24'
+  - name: matrix-project
+    version: '1.13'
+  - name: pam-auth
+    version: '1.3'
+  - name: docker-workflow
+    version: '1.17'
+  - name: workflow-step-api
+    version: '2.16'
+  - name: git-client
+    version: 2.7.2
