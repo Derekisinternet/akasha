@@ -3,6 +3,7 @@
 jenkins_docker_image: "jenkins/jenkins"
 jenkins_docker_image_tag: "lts-alpine"
 jenkins_restart_container: true
+jenkins_home_directory: /var/jenkins_home
 
 jenkins_user: jenkins
 jenkins_group: jenkins

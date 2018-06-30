@@ -10,5 +10,16 @@
       - 50000
     published_ports:
       - 8080:8080
-      - 5000:5000
+      - 50000:50000
+    volumes:
+      - "{{ jenkins_home_directory }}:/var/jenkins_home:rw"
 
+# TODO: finish setting this up:
+# - name: Create plugins.txt
+#   template:
+#     dest: /var/jenkins_home/plugins.txt
+#     src: var/jenkins_home/plugins.txt.j2
+#     owner: "{{ jenkins_user }}"
+#     group: "{{ jenkins_group }}"
+#   notify: Install Jenkins Plugins
+#   become: true
