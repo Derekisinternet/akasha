@@ -1,4 +1,16 @@
 ---
+- name: Create Jenkins folders
+  file:
+    path: "{{ item }}"
+    owner: "{{ jenkins_owner_id }}"
+    group: "{{ jenkins_group_id  }}"
+    state: directory
+    recurse: yes
+  with_items:
+    - "{{ jenkins_home_directory }}"
+  tags:
+    - configuration
+  become: true
 
 - name: Start jenkins container
   docker_container:
@@ -13,6 +25,7 @@
       - 50000:50000
     volumes:
       - "{{ jenkins_home_directory }}:/var/jenkins_home:rw"
+  become: true
 
 # TODO: finish setting this up:
 # - name: Create plugins.txt
