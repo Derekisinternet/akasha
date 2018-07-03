@@ -5,8 +5,7 @@ jenkins_agent_username: sa_swarm_agent
 jenkins_agent_password: "{{ jenkins_agent_password }}"
 jenkins_agent_name: "{{ inventory_hostname }}"
 jenkins_agent_num_executors: "{{ ansible_processor_cores|default(1)*2 }}"
-# jenkins_agent_labels: "{{ (ansible_os_family|lower() == 'windows')|ternary('windows', 'linux') }}"
-jenkins_agent_labels: linux
+jenkins_agent_labels: "{{ (ansible_os_family|lower() == 'windows')|ternary('windows', 'linux') }}"
 jenkins_agent_labels_file: "{{ jenkins_swarm_path }}/labels.swarm"
 # current logging implementation broken, needs update
 # jenkins_agent_log_file: "{{ jenkins_swarm_path }}/swarm.log"
