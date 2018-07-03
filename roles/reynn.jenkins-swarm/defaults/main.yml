@@ -11,8 +11,8 @@ jenkins_agent_labels_file: "{{ jenkins_swarm_path }}/labels.swarm"
 # current logging implementation broken, needs update
 # jenkins_agent_log_file: "{{ jenkins_swarm_path }}/swarm.log"
 jenkins_agent_additional_args:
-  - "-deleteExistingClients"
-  - "-disableClientsUniqueId"
+  - "deleteExistingClients"
+  - "disableClientsUniqueId"
 
 # Swarm client url building
 jenkins_swarm_client_version: 3.6
