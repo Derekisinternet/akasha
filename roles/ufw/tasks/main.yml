@@ -1,0 +1,16 @@
+---
+- name: Install latest version of UFW
+  apt:
+    name: ufw
+    state: latest
+
+- name: Apply network rules
+  ufw: 
+    port: "{{ item.port }}"
+    rule: "{{ item.rule }}"
+  loop: "{{ ufw_rules }}"
+
+- name: Enable firewall
+  ufw:
+    state: enabled
+    logging: "{{ ufw_logging }}"

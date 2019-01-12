@@ -1,8 +1,7 @@
 ---
-- name: install git
+- name: install base packages
   apt:
-    name=git
-- name: install docker
-  apt:
-    name=docker
-
+    name: "{{ base_package_list }}"
+    state: present
+    force: yes
+  become: true

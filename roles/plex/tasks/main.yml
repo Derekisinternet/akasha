@@ -1,0 +1,34 @@
+---
+- name: 'Add the Plex apt key'
+  apt_key:
+    url: 'https://downloads.plex.tv/plex-keys/PlexSign.key'
+    state: 'present'
+  become: true
+
+- name: 'Add the Plex Ubuntu repo'
+  become: true
+  apt_repository:
+    repo: 'deb https://downloads.plex.tv/repo/deb public main'
+    state: 'present'
+
+- name: 'Install the latest version of Plex'
+  apt:
+    name: 'plexmediaserver'
+    state: 'latest'
+  notify: 'Restart Plex'
+  become: true
+
+- name: 'Create media directories'
+  file:
+    path: "/opt/plexmedia/{{ item }}"
+    state: directory
+    owner: plex
+    recurse: yes
+  with_items:
+    - movies
+    - series
+
+- name: Update UFW
+  import_tasks: ufw.yml
+
+- meta: flush_handlers

@@ -1,0 +1,20 @@
+---
+- name: Copy over config file for plex
+  copy:
+    src: files/plexmediaserver
+    dest: /etc/ufw/applications.d/plexmediaserver
+  become: true
+
+- name: Update profiles list
+  command: ufw app update plexmediaserver
+  become: true
+
+- name: Apply new firewall rules
+  ufw:
+    name: plexmediaserver
+    rule: allow
+  become: true
+
+- name: Reload UFW
+  ufw:
+    state: reloaded
