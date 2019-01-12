@@ -3,5 +3,4 @@
   hosts: jenkins
   roles:
     - base
-    - geerlingguy.jenkins    
-
+    - geerlingguy.jenkins
