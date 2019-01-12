@@ -4,4 +4,3 @@ base_package_list:
   - python-pip
   - htop
   - ufw
-  
