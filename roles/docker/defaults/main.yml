@@ -1,8 +1,7 @@
 ---
-# Edition can be one of: 'ce' (Community Edition) or 'ee' (Enterprise Edition).
-docker_edition: 'ce'
-docker_package: "docker-{{ docker_edition }}"
-docker_package_state: present
+
+docker_package: "docker-ce"
+
 
 # Used only for Debian/Ubuntu. Switch 'stable' to 'edge' if needed.
 docker_apt_release_channel: stable

@@ -1,7 +1,6 @@
 ---
 
-- include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+- include: "{{ ansible_os_family|lower }}/setup.yml"
 
 - name: Install python dependencies
   pip:
@@ -13,7 +12,9 @@
 
 
 - name: Install Docker.
-  package: name={{ docker_package }} state={{ docker_package_state }}
+  package: 
+    name: "{{ docker_package }}"
+    state: present
 
 - name: Ensure Docker is started and enabled at boot.
   service:
