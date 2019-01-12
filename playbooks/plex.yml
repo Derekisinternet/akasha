@@ -2,4 +2,5 @@
 - hosts: plex
   become: true
   roles:
+    - base
     - plex
