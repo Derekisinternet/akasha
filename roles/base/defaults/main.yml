@@ -1,0 +1,7 @@
+---
+base_package_list:
+  - git
+  - python-pip
+  - htop
+  - ufw
+  
