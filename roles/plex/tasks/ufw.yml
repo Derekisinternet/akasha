@@ -15,6 +15,6 @@
     rule: allow
   become: true
 
-- name: Make sure UFW is running
+- name: Reload UFW
   ufw:
     state: reloaded
