@@ -1,0 +1,4 @@
+---
+samba_pacakges:
+  - samba-server
+  - samba-common

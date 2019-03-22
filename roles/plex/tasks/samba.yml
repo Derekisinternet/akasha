@@ -1,13 +1,10 @@
 ---
 - name: install samba packages
   apt: 
-    name: "{{ item }}"
-  with_items:
-    - samba-server
-    - samba-common
+    name: "{{ samba_packages }}"
   become: true
 
-- name: configure samba share
+# - name: configure samba share
 
 - name: start samba and enable on boot
   service:
