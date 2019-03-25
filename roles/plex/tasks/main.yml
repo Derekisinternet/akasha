@@ -19,5 +19,10 @@
 
 - name: create samba share
   import_tasks: samba.yml
+  tags:
+    - fileshare
 
+- name: create media folders
+  file:
+    path: "{{ media_share_path }}"
 - meta: flush_handlers

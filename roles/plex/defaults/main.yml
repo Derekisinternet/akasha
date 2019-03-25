@@ -1,4 +1,8 @@
 ---
-samba_pacakges:
-  - samba-server
+samba_packages:
+  - samba
   - samba-common
+
+debian_samba_service_name: smbd
+
+media_share_path: /srv/plex_media

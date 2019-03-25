@@ -4,10 +4,13 @@
     name: "{{ samba_packages }}"
   become: true
 
-# - name: configure samba share
+- name: unmask samba
+systemd:
+  name: samba
+  masked: no
 
 - name: start samba and enable on boot
   service:
-    name: samba
-    state: started
+    name: "{{ debian_samba_service_name }}"
     enabled: yes
+    state: started
