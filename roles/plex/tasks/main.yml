@@ -24,5 +24,12 @@
 
 - name: create media folders
   file:
-    path: "{{ media_share_path }}"
+    path: "{{ media_share_path }}/{{ item }}"
+    state: directory
+  with_items:
+    - Movies
+    - Television
+    - Music
+
+
 - meta: flush_handlers
