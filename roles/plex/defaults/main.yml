@@ -2,6 +2,7 @@
 samba_packages:
   - samba
   - samba-common
+  - smbclient
 
 debian_samba_service_name: smbd
 
